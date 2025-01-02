@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api_mia:
+    container_name: 'api-agendamentos'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/api_agendamentos
+    ports:
+      - "8080:8080"
