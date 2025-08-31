@@ -71,7 +71,7 @@ PRIMARY KEY(id),
       ON UPDATE CASCADE);
 
 INSERT INTO `usuario` (`id`, `nome`, `cpf`, `email`, `senha`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Marcos Lopes', '069.389.071-10', 'marcos.ggoncalves.pr@gmail.com', '$2a$10$E/x3r7OGpuDkrPj/KtHyM.YceWWJ4fi7ME2etxY/9IdfMYDo9T9dW', '2024-11-10 19:54:34', '2024-11-10 19:54:34', NULL);
+(1, 'Marcos Lopes', '000.000.000-10', 'marcos.ggoncalves.pr@gmail.com', '$2a$10$E/x3r7OGpuDkrPj/KtHyM.YceWWJ4fi7ME2etxY/9IdfMYDo9T9dW', '2024-11-10 19:54:34', '2024-11-10 19:54:34', NULL);
 
 INSERT INTO `sala` (`id`, `hash`, `nome`, `descricao`, `intervalo_por_agendamento`, `horario_ini_funcionamento`, `horario_fim_funcionamento`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'uQ1hlDYLigFw4bPu', 'Sala 01 - Sala Cooperativa', 'A maior sala de reunião com mesa e cadeiras.', 30, '08:00:00', '18:00:00', '2024-11-13 14:57:46', '2024-11-13 22:33:50', NULL),
@@ -107,6 +107,3 @@ ALTER TABLE sala_grade_horario ADD COLUMN dia_inteiro int DEFAULT 0;
 
 INSERT INTO `sala_grade_horario`(`sala_id`, `inicial`, `final`, `created_at`, `updated_at`, `dia_inteiro`) 
 SELECT s.id as sala_id, s.horario_ini_funcionamento as inicial, s.horario_fim_funcionamento as final, now() as created_at, now() as updated_at, 1 as dia_inteiro FROM sala s
-
-
-delete  FROM `sala_grade_horario_reserva` WHERE id in (228,229,230,231,232,233,234,235,236,237,238,239,246,243,245,240,247,244,242,241)
